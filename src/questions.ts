@@ -130,17 +130,6 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    question: "在主要為日本玩家的伺服器裡",
-    answers: [
-      { text: "絕對不在公頻使用中文", value: "law" },
-      {
-        text: "確定附近都是中文玩家時，白頻中文沒關係吧",
-        value: "law-chaos-neutral",
-      },
-      { text: "又沒規定不能用中文，看不懂不要看", value: "chaos" },
-    ],
-  },
-  {
     question: "當朋友在抱怨隊友很雷的時候，你會回應:",
     answers: [
       {
