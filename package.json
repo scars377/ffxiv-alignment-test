@@ -44,5 +44,6 @@
   },
   "devDependencies": {
     "prettier": "^3.2.5"
-  }
+  },
+  "homepage": "https://scars377.github.io/ffxiv-alignment-test"
 }

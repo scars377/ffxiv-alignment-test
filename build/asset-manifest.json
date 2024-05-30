@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.cedc6bee.js",
-    "index.html": "/index.html",
-    "main.cedc6bee.js.map": "/static/js/main.cedc6bee.js.map"
+    "main.js": "/ffxiv-alignment-test/static/js/main.cedc6bee.js",
+    "index.html": "/ffxiv-alignment-test/index.html",
+    "main.cedc6bee.js.map": "/ffxiv-alignment-test/static/js/main.cedc6bee.js.map"
   },
   "entrypoints": [
     "static/js/main.cedc6bee.js"
