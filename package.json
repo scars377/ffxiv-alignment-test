@@ -1,13 +1,12 @@
 {
   "name": "workspace",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@reduxjs/toolkit": "^2.2.5",
-    "@types/jest": "^27.5.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "framer-motion": "^11.2.9",
@@ -26,8 +25,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
