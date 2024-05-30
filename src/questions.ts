@@ -1,20 +1,4 @@
-export type Value =
-  | "good"
-  | "good-evil-neutral"
-  | "evil"
-  | "law"
-  | "law-chaos-neutral"
-  | "chaos";
-
-type Answer = {
-  text: string;
-  value: Value;
-};
-
-type Question = {
-  question: string;
-  answers: Answer[];
-};
+import { Question } from "./types";
 
 export const QUESTIONS: Question[] = [
   {

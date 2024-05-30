@@ -1,65 +1,48 @@
-import React, { useState, useEffect } from "react";
-import { QUESTIONS, Value } from "./questions";
-import {
-  ChakraProvider,
-  Radio,
-  RadioGroup,
-  Stack,
-  Container,
-  DarkMode,
-  useColorMode,
-  Card,
-  CardBody,
-  Heading,
-  Text,
-  Button,
-} from "@chakra-ui/react";
+import React, { useLayoutEffect } from "react";
+import { createHashRouter, redirect, RouterProvider } from "react-router-dom";
+import { ChakraProvider, useColorMode } from "@chakra-ui/react";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { QuestionsPage } from "./QuestionsPage";
+import { ResultPage } from "./ResultPage";
 
-export const App = () => {
-  const [submit, setSubmit] = useState(false);
+const router = createHashRouter([
+  {
+    path: "/edit",
+    element: <QuestionsPage />,
+  },
+  {
+    path: "/show",
+    element: (
+      <>
+        <QuestionsPage disabled />
+        <ResultPage />
+      </>
+    ),
+  },
+  {
+    path: "*",
+    loader: () => redirect("/edit"),
+  },
+]);
 
-  const [answers, setAnswers] = useState<(Value | null)[]>(
-    QUESTIONS.map((_) => null),
-  );
+const ForceDarkMode = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
 
-  return (
-    <ChakraProvider>
-      {submit ? (
-        <Container>
-          123
-          <Button onClick={() => setSubmit(false)}>Back</Button>
-        </Container>
-      ) : (
-        <Container>
-          {QUESTIONS.map((item, idx) => {
-            const ans = answers[idx];
-            const setAns = (val: Value) =>
-              setAnswers(answers.map((v, i) => (i === idx ? val : v)));
+  useLayoutEffect(() => {
+    if (colorMode !== "dark") {
+      toggleColorMode();
+    }
+  }, [colorMode]);
 
-            return (
-              <Card key={idx}>
-                <CardBody>
-                  <Heading>{item.question}</Heading>
-
-                  <RadioGroup onChange={setAns} value={ans as string}>
-                    <Stack direction="column">
-                      {item.answers.map(({ text, value }) => (
-                        <Radio value={value} key={value}>
-                          {text}
-                        </Radio>
-                      ))}
-                    </Stack>
-                  </RadioGroup>
-                </CardBody>
-              </Card>
-            );
-          })}
-
-          <Button colorScheme="blue" disabled onClick={() => setSubmit(true)}>
-            Submit
-          </Button>
-        </Container>
-      )}
-    </ChakraProvider>
-  );
+  return null;
 };
+
+export const App = () => (
+  <ChakraProvider>
+    <ForceDarkMode />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </ChakraProvider>
+);
