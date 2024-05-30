@@ -140,4 +140,105 @@ export const QUESTIONS: Question[] = [
       { text: "您晚餐吃什麼", value: "chaos" },
     ],
   },
+  {
+    question: "團隊組滿要出發，正在進行位置宣告",
+    answers: [
+      {
+        text: "宣告就宣告囉",
+        value: "law-chaos-neutral",
+      },
+      { text: "確實的宣告，並主動協調減傷或調整事項", value: "law" },
+      {
+        text: "我是白魔，他是學者，這還用得著需告嗎，又不是白癡",
+        value: "chaos",
+      },
+    ],
+  },
+  {
+    question: "明明是解除限制的副本，但團主卻喊了飯藥必須",
+    answers: [
+      {
+        text: "老實吃飯喝藥，因為我是同意了才加入的",
+        value: "law",
+      },
+      {
+        text: "吃便宜的舊飯，應該不會被發現吧，反正解限嘛",
+        value: "law-chaos-neutral",
+      },
+      {
+        text: "我才不吃，是喊吃的團主搞不清楚狀況",
+        value: "chaos",
+      },
+    ],
+  },
+  {
+    question: "對於初見的副本，你會預習到什麼程度",
+    answers: [
+      {
+        text: "不想造成他人困擾，因此預習到滾瓜爛熟才敢進副本",
+        value: "good",
+      },
+      {
+        text: "預習到差不多就能進本",
+        value: "good-evil-neutral",
+      },
+      {
+        text: "我一看攻略就想睡，大致看一下然後先打再說吧",
+        value: "evil",
+      },
+    ],
+  },
+  {
+    question:
+      "對於一個對世界蠻不在乎，傷人殺人、造成無數傷痛，全心想的只有與你酣戰一場，的這種角色",
+    answers: [
+      {
+        text: "喜歡",
+        value: "evil",
+      },
+      {
+        text: "討厭",
+        value: "good",
+      },
+      {
+        text: "喜歡也討厭",
+        value: "good-evil-neutral",
+      },
+    ],
+  },
+  {
+    question:
+      "對於一個全心珍愛這個世界，堅信自己的正確，不惜使用強制手段也要做為人類的導師來拯救大家，的這種角色",
+    answers: [
+      {
+        text: "喜歡",
+        value: "law",
+      },
+      {
+        text: "討厭",
+        value: "chaos",
+      },
+      {
+        text: "喜歡也討厭",
+        value: "law-chaos-neutral",
+      },
+    ],
+  },
+  {
+    question: "你只能救一個的話你會",
+    answers: [
+      {
+        text: "拯救自己",
+        value: "evil",
+      },
+      {
+        text: "拯救世界",
+        value: "good",
+      },
+      {
+        text: "拯救光之戰士",
+        value: "good-evil-neutral",
+      },
+    ],
+  },
 ];

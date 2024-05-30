@@ -73,6 +73,13 @@ export const QuestionsPage = ({ disabled = false }: { disabled?: boolean }) => {
 
   const hasEmptyAnswer = answers.some((a) => a === null);
 
+  const count: any = {};
+  QUESTIONS.forEach(({ answers }) =>
+    answers.forEach(({ value }) => {
+      count[value] = (count[value] || 0) + 1;
+    }),
+  );
+
   return (
     <Box>
       <Stack spacing={4}>
@@ -100,6 +107,7 @@ export const QuestionsPage = ({ disabled = false }: { disabled?: boolean }) => {
           )}
         </Stack>
       </Stack>
+      {/* <pre>{JSON.stringify(count, null, 2)}</pre> */}
     </Box>
   );
 };
