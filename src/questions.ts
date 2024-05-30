@@ -225,7 +225,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    question: "你只能救一個的話你會",
+    question: "只能救一個的話你會",
     answers: [
       {
         text: "拯救自己",
