@@ -1,5 +1,5 @@
 import {
-  Container,
+  Box,
   Heading,
   styled,
   Table,
@@ -12,7 +12,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { gt } from "./gt";
-import {Value} from "./types";
+import { Value } from "./types";
 
 const Th = styled(_Th, {
   baseStyle: {
@@ -91,7 +91,7 @@ export const ResultPage = () => {
   };
 
   return (
-    <Container>
+    <Box>
       <Table my={8}>
         <Tbody>
           <Tr>
@@ -157,6 +157,6 @@ export const ResultPage = () => {
       <Heading textAlign={"center"}>
         {gt("result:")} {gt(alignment[0])}
       </Heading>
-    </Container>
+    </Box>
   );
 };

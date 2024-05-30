@@ -2,7 +2,7 @@ import {
   Button,
   Card,
   CardBody,
-  Container,
+  Box,
   Heading,
   Radio,
   Spacer,
@@ -24,7 +24,7 @@ const Question = ({ idx, disabled }: { idx: number; disabled: boolean }) => {
   return (
     <Card key={idx}>
       <CardBody>
-        <Heading size={"lg"}>{item.question}</Heading>
+        <Heading size={"md"}>{item.question}</Heading>
         <Stack pt={4}>
           {item.answers.map(({ text, value }) => (
             <Radio
@@ -74,7 +74,7 @@ export const QuestionsPage = ({ disabled = false }: { disabled?: boolean }) => {
   const hasEmptyAnswer = answers.some((a) => a === null);
 
   return (
-    <Container>
+    <Box>
       <Stack spacing={4}>
         {QUESTIONS.map((_, idx) => (
           <Question key={idx} idx={idx} disabled={disabled} />
@@ -100,6 +100,6 @@ export const QuestionsPage = ({ disabled = false }: { disabled?: boolean }) => {
           )}
         </Stack>
       </Stack>
-    </Container>
+    </Box>
   );
 };

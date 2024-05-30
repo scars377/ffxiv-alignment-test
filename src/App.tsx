@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { createHashRouter, redirect, RouterProvider } from "react-router-dom";
-import { ChakraProvider, useColorMode } from "@chakra-ui/react";
+import { ChakraProvider, Container, useColorMode } from "@chakra-ui/react";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { QuestionsPage } from "./QuestionsPage";
@@ -42,7 +42,9 @@ export const App = () => (
   <ChakraProvider>
     <ForceDarkMode />
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <Container my={8}>
+        <RouterProvider router={router} />
+      </Container>
     </Provider>
   </ChakraProvider>
 );
