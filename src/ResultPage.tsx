@@ -81,7 +81,7 @@ export const ResultPage = () => {
   );
 
   const getColor = (key: Alignment): string => {
-    if (alignment[0] == key) {
+    if (alignment[0] === key) {
       return "teal";
     } else if (sums[key] > 0) {
       return "whiteAlpha.50";

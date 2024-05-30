@@ -1,5 +1,5 @@
 import { QUESTIONS } from "./questions";
-import {Value} from "./types";
+import { Value } from "./types";
 
 const vals: (Value | null)[] = [
   null,
@@ -37,7 +37,7 @@ export const decode = (code?: string): (Value | null)[] => {
   const bytes = new TextEncoder().encode(str);
   const answers = [].map.call(bytes, (b) => vals[b]) as (Value | null)[];
 
-  if (answers.length != QUESTIONS.length) {
+  if (answers.length !== QUESTIONS.length) {
     throw new Error("invalid code");
   }
 
