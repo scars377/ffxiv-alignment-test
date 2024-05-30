@@ -8,7 +8,7 @@ import {
   Th as _Th,
   Tr,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { gt } from "./gt";
@@ -90,8 +90,16 @@ export const ResultPage = () => {
     }
   };
 
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollIntoView();
+    }
+  }, [ref.current]);
+
   return (
-    <Box>
+    <Box ref={ref}>
       <Table my={8}>
         <Tbody>
           <Tr>
